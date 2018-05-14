@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Spring Security</title>
+</head>
+<link href="../static/css/bootstrap-3.3.4-dist/css/bootstrap.min.css"
+	rel="stylesheet" media="screen"
+	th:href="@{/css/bootstrap-3.3.4-dist/css/bootstrap.min.css}" />
+
+<script src="../static/js/jquery-2.1.4.min.js"
+	th:src="@{/js/jquery-2.1.4.min.js}"></script>
+
+<link th:href="@{/css/custom.css}" rel="stylesheet" media="screen" />
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Spring Security Demo</h1>
+			</div>
+		</div>
+		<div class="row" sec:authorize="isAuthenticated()">
+			<div class="col-md-10 col-md-offset-2">
+				<p style="color: green">User is logged in</p>
+			</div>
+		</div>
+		<div class="row" sec:authorize="!isAuthenticated()">
+			<div class="col-md-10 col-md-offset-2">
+				<p style="color: red">User is logged out</p>
+			</div>
+		</div>
+		<div class="row" sec:authorize="isAuthenticated()">
+			<div class="col-md-10 col-md-offset-2">
+				<h2>User Has Role Admin</h2>
+			</div>
+		</div>
+
+		<div class="row" sec:authorize="isAuthenticated()">
+			<div class="col-md-10 col-md-offset-2">
+				<h2>User Has Role User</h2>
+			</div>
+		</div>
+
+	</div>
+	<div class="container" th:replace="fragments/footer :: footer">
+		<p>Footer</p>
+	</div>
+</body>
+</html>

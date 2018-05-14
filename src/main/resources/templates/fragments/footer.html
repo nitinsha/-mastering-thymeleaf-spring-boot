@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Page Title</title>
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+<script th:src="@{/js/jquery.min.js}"></script>
+<link th:href="@{css/custom.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container" th:fragment="footer">
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">© 2016 - Spring Framework Guru</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
